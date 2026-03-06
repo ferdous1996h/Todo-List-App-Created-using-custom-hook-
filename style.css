@@ -8,7 +8,7 @@ button:focus{
   border: none;
 }
 .app_box{
-  width: 900px;
+  max-width: 900px;
   margin: 0 auto;
 }
 label,input{
@@ -30,4 +30,8 @@ span{
   align-items: center;
   gap: 20px;
   padding:15px 5px
+}
+.complete{
+  text-decoration: line-through;
+  color: rgb(85, 85, 85);
 }

@@ -1,29 +1,7 @@
-// import { useState } from 'react';
+import { clsx } from 'clsx';
 import useLocalStorage from './Hook/useLocalStorage';
 export default function App() {
-  // const localFetch = localStorage.getItem('localData');
-  // const data = localFetch ? JSON.parse(localFetch) : [];
-  // const [listTodo, setListTodo] = useState(data);
-  // function punchTask(formdata) {
-  //   const getTodo = formdata.get('task');
-  //   getTodo &&
-  //     setListTodo(prev => {
-  //       localStorage.setItem('localData', JSON.stringify([...prev, getTodo]));
-  //       return [...prev, getTodo];
-  //     });
-  // }
-  // function dltBox(e) {
-  //   const dltGrab = e.target.closest('button').dataset.name;
-  //   console.log(dltGrab);
-  //   setListTodo(prev => {
-  //     localStorage.setItem(
-  //       'localData',
-  //       JSON.stringify(prev.filter(ele => ele !== dltGrab)),
-  //     );
-  //     return prev.filter(ele => ele !== dltGrab);
-  //   });
-  // }
-  const { listTodo, punchTask, dltBox }=useLocalStorage();
+  const { listTodo, punchTask, dltBox } = useLocalStorage();
 
   return (
     <main className="app_box">
@@ -41,10 +19,13 @@ export default function App() {
       <section>
         <ul>
           {listTodo.map((ele, ind) => {
+            const cls = clsx(ele.stat && 'complete');
             return (
               <li className="item_Box" key={ind} onClick={dltBox}>
-                <span key={ind}>{ele}</span>
-                <button className="dltBtn" data-name={ele}>
+                <span key={ind} className={cls}>
+                  {ele.note}
+                </span>
+                <button className="dltBtn" data-name={ele.note}>
                   x
                 </button>
               </li>
