@@ -10,9 +10,9 @@ This is a dynamic todo list app. Where we can :
 ## Skill acquired
 - Get input data from react action form method
 - Listen event from event bubbling 
-- Used optional chaining ***(?.)*** to access deeply nested property
+- Used optional chaining **(?.)** to access deeply nested property
 - Used localstorage to save the data in browser
 - Used **CustomHook** to encapsulate the complex logic
 
 ## TechStack Used
-[!TeckStack](https://skillicons.dev/icons?i=html,css,js,react,bun,vite)
+![TeckStack](https://skillicons.dev/icons?i=html,css,js,react,bun,vite)
